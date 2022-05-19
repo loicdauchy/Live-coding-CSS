@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.square{
+    width: 300px;
+    height: 300px;
+    background: rgb(128, 47, 47);
+    margin: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+.square:nth-child(2){
+    background: blue;
+}
+.square::after{
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    right: -25px;
+    top: calc(50% - 25px);
+}
+@media screen and (max-width: 500px) {
+    #main{
+        flex-direction: column-reverse;
+    }
+    .square{
+        background: rgb(22, 174, 52);
+    }
+}
